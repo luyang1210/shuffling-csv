@@ -5,16 +5,14 @@ Author : Felan Carlo Garcia
 import numpy as np
 import pandas as pd
 
-
 def shuffler(filename):
-  df            = pd.read_csv(filename, header=0)
-  shuffled_data = df.reindex(np.random.permutation(df.index))
+  df = pd.read_csv(filename, header=0)
   # return the pandas dataframe
-  return shuffled_data
-  
-def main():
-  output = shuffler('titanic3.csv')
-  output.to_csv('shuffled_output.csv', sep=',')
+  return df.reindex(np.random.permutation(df.index))
+
+
+def main(outputfilename):
+  shuffler('titanic3.csv').to_csv(outputfilename, sep=',')
 
 if __name__ == '__main__': 
-  main()
+  main('shuffled_data.csv')
