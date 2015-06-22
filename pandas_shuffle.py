@@ -12,7 +12,7 @@ def shuffler(filename):
 
 
 def main(outputfilename):
-  shuffler('titanic3.csv').to_csv(outputfilename, sep=',')
+  shuffler('test.csv').to_csv(outputfilename, sep=',')
 
 if __name__ == '__main__': 
-  main('shuffled_data.csv')
+  main('final-output.csv')
